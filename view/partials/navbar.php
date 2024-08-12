@@ -13,7 +13,7 @@
         </label>
 
         <nav class="navbar">
-            <a href="#">Home</a>
+            <a href="/">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
@@ -21,8 +21,14 @@
     </div>
 
     <div class="button">
-        <a class="btn-login" href="#">Login</a>
-        <a class="btn-login" href="#">Register</a>
+        <?php if (!isset($_SESSION['user'])):?>
+            <a class="btn-login" href="/login">Login</a>
+            <a class="btn-login" href="/register">Register</a>
+
+        <?php else: echo $_SESSION['user'];?>
+            <a class="btn-login" href="/logout">Logout</a>
+
+        <?php endif;?>
     </div>
 
 </header>

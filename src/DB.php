@@ -17,7 +17,7 @@ class DB
             'password' => $_ENV['DB_PASSWORD'],
         ], '',';');
 
-        return new PDO("{$_ENV['DB_CONNECTION']}:$dsn");
+        return new PDO("{$_ENV['DB_CONNECTION']}:$dsn", options: [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
     }
 }
 
