@@ -13,8 +13,7 @@ body {
     align-items: center;
     min-height: 500px;
     background-size: cover;
-    background: #f6f8fc;
-    background-position: center;
+    background: #f6f8fc center;
 }
 
 .container {
@@ -254,7 +253,6 @@ header {
     font-size: 1em;
     color: #FFF;
     font-weight: 500;
-
 }
 
 .login-register {

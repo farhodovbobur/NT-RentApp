@@ -72,7 +72,7 @@ class Users
 
         } else {
             $user = $this->create();
-            $_SESSION['user'] = $user['username'];
+            $_SESSION['user'] = $user->username;
             header('location: /');
         }
         exit();
@@ -85,8 +85,8 @@ class Users
 
         $result = $this->getUser($phone);
 
-        if (password_verify($password, $result['password'])) {
-            $_SESSION['user'] = $result['username'];
+        if (password_verify($password, $result->password)) {
+            $_SESSION['user'] = $result->username;
             header('location: /');
         } else {
             $_SESSION['error'] = "Wrong phone number or password";
