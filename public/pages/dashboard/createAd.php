@@ -180,7 +180,7 @@ loadPartial('navbar.php');
         <div class="container-fluid relative px-3">
             <div class="layout-specing">
                 <!-- Start Content -->
-                
+
 
                 <div class="container relative">
                     <div class="grid md:grid-cols-2 grid-cols-1 gap-6 mt-6">
