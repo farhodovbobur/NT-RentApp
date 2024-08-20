@@ -2,11 +2,17 @@
 
 declare(strict_types=1);
 
-\App\Router::get('/', fn() => require 'view/pages/home.php');
+use App\Router;
 
-\App\Router::get('/login', fn() => require 'view/pages/auth/login.php');
-\App\Router::get('/register', fn() => require 'view/pages/auth/register.php');
-\App\Router::get('/logout', fn() => (new \App\Users())->logout());
+Router::get('/', fn() => loadController('homeView.php'));
+Router::get('/ads/{id}', fn(int $id) => loadController('showAd.php', ['id' => $id]));
 
-\App\Router::post('/register', fn() => (new \App\Users())->register());
-\App\Router::post('/login', fn() => (new \App\Users())->login());
+Router::get('/ads/create', fn() => loadView('dashboard/createAd.php'));
+
+Router::get('/login', fn() => loadView('auth/login.php'));
+Router::get('/register', fn() => loadView('auth/register.php'));
+
+Router::get('/logout', fn() => loadController('logoutUser.php'));
+Router::post('/login', fn() => loadController('loginUser.php'));
+Router::post('/register', fn() => loadController('registerUser.php'));
+

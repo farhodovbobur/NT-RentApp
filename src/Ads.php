@@ -67,7 +67,7 @@ class Ads
 
     public function getAd(int $id)
     {
-        return $this->pdo->query("SELECT * FROM ads WHERE id = :id")->fetch();
+        return $this->pdo->query("SELECT * FROM ads WHERE id = {$id}")->fetch();
     }
 
     public function getAds(): false|array

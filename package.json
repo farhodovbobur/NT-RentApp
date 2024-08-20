@@ -6,3 +6,4 @@
     "taiwind": "npx tailwindcss -i public/styles/core.css -o public/styles/main.css --watch"
   }
 }
+
