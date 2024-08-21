@@ -2,14 +2,24 @@
 
 declare(strict_types=1);
 
-$title       = $_POST['title'];
-$address     = $_POST['address'];
-$rooms       = (int) $_POST['rooms'];
-$square      = (float) $_POST['square'];
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+    $branches = (new \App\Branch())->getBranches();
+    loadDashboard('createAd.php', ['branches' => $branches]);
+    exit();
+
+}
+
+
+$title = $_POST['title'];
+$branch = (int) $_POST['branch'];
+$address = $_POST['address'];
+$rooms = (int)$_POST['rooms'];
+$square = (float)$_POST['square'];
 $description = $_POST['desc'];
-$price       = (float) $_POST['price'];
-$user        = (int) $_POST['user'];
-$status      = (int) $_POST['status'];
+$price = (float)$_POST['price'];
+$user = (int)$_POST['user'];
+$status = (int)$_POST['status'];
 
 if ($_POST['title']
     && $_POST['address']
@@ -29,6 +39,7 @@ if ($_POST['title']
         $title,
         $user,
         $status,
+        $branch,
         $address,
         $price,
         $rooms,
@@ -38,7 +49,7 @@ if ($_POST['title']
 
     if ($newAdsId) {
         $imageHandler = new \App\Image();
-        $fileName     = $imageHandler->handleUpload();
+        $fileName = $imageHandler->handleUpload();
 
         if (!$fileName) {
             exit('Rasm yuklanmadi!');

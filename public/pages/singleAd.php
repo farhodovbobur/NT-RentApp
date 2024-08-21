@@ -15,24 +15,9 @@ loadPartial('navbar.php');
                 <div class="grid grid-cols-1 relative">
                     <div class="tiny-one-item">
                         <div class="tiny-slide">
-                            <img src="<?=$ad->image?>" class="rounded-md shadow dark:shadow-gray-700" alt="">
+                            <img src="<?=$ad->image_name?>" class="rounded-md shadow dark:shadow-gray-700" alt="">
                         </div>
 
-                        <div class="tiny-slide">
-                            <img src="../assets/images/property/single/2.jpg" class="rounded-md shadow dark:shadow-gray-700" alt="">
-                        </div>
-
-                        <div class="tiny-slide">
-                            <img src="../assets/images/property/single/3.jpg" class="rounded-md shadow dark:shadow-gray-700" alt="">
-                        </div>
-
-                        <div class="tiny-slide">
-                            <img src="../assets/images/property/single/4.jpg" class="rounded-md shadow dark:shadow-gray-700" alt="">
-                        </div>
-
-                        <div class="tiny-slide">
-                            <img src="../assets/images/property/single/5.jpg" class="rounded-md shadow dark:shadow-gray-700" alt="">
-                        </div>
                     </div>
                 </div>
 

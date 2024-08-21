@@ -1,3 +1,19 @@
+<!-- Footer Start -->
+<footer class="shadow dark:shadow-gray-700 bg-white dark:bg-slate-900 px-6 py-4">
+    <div class="container-fluid">
+        <div class="grid grid-cols-1">
+            <div class="sm:text-start text-center mx-md-2">
+                <p class="mb-0 text-slate-400">© <script>document.write(new Date().getFullYear())</script> Hously. Design with <i class="mdi mdi-heart text-red-600"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
+            </div><!--end col-->
+        </div><!--end grid-->
+    </div><!--end container-->
+</footer><!--end footer-->
+<!-- End -->
+</main>
+<!--End page-content" -->
+</div>
+<!-- page-wrapper -->
+
 <!-- Switcher -->
 <div class="fixed top-[30%] -end-2 z-50">
             <span class="relative inline-block rotate-90">
@@ -13,10 +29,15 @@
 
 
 <!-- JAVASCRIPTS -->
-<script src="../assets/libs/feather-icons/feather.min.js"></script>
-<script src="../assets/libs/simplebar/simplebar.min.js"></script>
+<script src="../assets/libs/dash/libs/jsvectormap/jsvectormap.min.js"></script>
+<script src="../assets/libs/dash/libs/jsvectormap/maps/world.js"></script>
+<script src="../assets/js/dash/jsvectormap.init.js"></script>
+<script src="../assets/libs/dash/libs/apexcharts/apexcharts.min.js"></script>
+<script src="../assets/libs/dash/libs/feather-icons/feather.min.js"></script>
+<script src="../assets/libs/dash/libs/simplebar/simplebar.min.js"></script>
 <script src="../assets/js/dash/plugins.init.js"></script>
 <script src="../assets/js/dash/app.js"></script>
+
 
 <script>
     const handleChange = () => {

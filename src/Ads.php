@@ -18,19 +18,21 @@ class Ads
         string $title,
         int    $user_id,
         int    $status_id,
+        int    $branch_id,
         string $address,
         float  $price,
         int    $rooms,
         float  $square,
         string $description): false|string
     {
-        $query = "INSERT INTO ads (title, user_id, status_id, address, price, rooms, square, description, created_at) 
-                  VALUE (:title, :user_id, :status_id, :address, :price, :rooms, :square, :description, NOW())";
+        $query = "INSERT INTO ads (title, user_id, status_id, branch_id, address, price, rooms, square, description, created_at) 
+                  VALUE (:title, :user_id, :status_id, :branch_id, :address, :price, :rooms, :square, :description, NOW())";
 
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':status_id', $status_id);
+        $stmt->bindParam(':branch_id', $branch_id);
         $stmt->bindParam(':address', $address);
         $stmt->bindParam(':price', $price);
         $stmt->bindParam(':rooms', $rooms);
