@@ -1,8 +1,9 @@
 <?php
+declare(strict_types=1);
 loadPartial('header.php');
 loadPartial('navbar.php');
 ?>
-
+<div class="container_style">
     <div class="wrapper">
         <span class="icon-close"><ion-icon name="close"></ion-icon></span>
 
@@ -20,14 +21,15 @@ loadPartial('navbar.php');
                     <input type="password" id="password" name="password" required oninput="this.value = this.value.replace(/^\s+|\s+$/g, '');">
                     <label>Password</label>
                 </div>
-                <div class="error">
+                <div class="error_style">
                     <?php
                     if (isset($_SESSION['error'])) {
                         echo $_SESSION['error'];
                         unset($_SESSION['error']);
-                    }?>
+                    }
+                    ?>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn_style">Login</button>
                 <div class="login-register">
                     <p>Don't have an account?
                         <a href="/register" class="register-link">Register</a>
@@ -36,7 +38,7 @@ loadPartial('navbar.php');
             </form>
         </div>
     </div>
-
+</div>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 

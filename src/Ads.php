@@ -18,25 +18,27 @@ class Ads
         string $title,
         int    $user_id,
         int    $status_id,
-        int    $branch_id,
-        int    $address_id,
+        string $address,
         float  $price,
         int    $rooms,
-        string $description): bool
+        float  $square,
+        string $description): false|string
     {
-        $query = "INSERT INTO ads (title, user_id, status_id, branch_id, address_id, price, rooms, description, created_at) 
-                  VALUE (:title, :user_id, :status_id, :branch_id, :address_id, :price, :rooms, :description, NOW())";
+        $query = "INSERT INTO ads (title, user_id, status_id, address, price, rooms, square, description, created_at) 
+                  VALUE (:title, :user_id, :status_id, :address, :price, :rooms, :square, :description, NOW())";
 
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':status_id', $status_id);
-        $stmt->bindParam(':branch_id', $branch_id);
-        $stmt->bindParam(':address_id', $address_id);
+        $stmt->bindParam(':address', $address);
         $stmt->bindParam(':price', $price);
         $stmt->bindParam(':rooms', $rooms);
+        $stmt->bindParam(':square', $square);
         $stmt->bindParam(':description', $description);
-        return $stmt->execute();
+        $stmt->execute();
+
+        return $this->pdo->lastInsertId();
     }
 
     public function updateAds(
@@ -49,7 +51,7 @@ class Ads
         int    $description): bool
     {
         $query = "UPDATE ads SET title = :title, status_id = :status_id, branch_id = :branch_id, 
-                  address_id = :address_id, price = :price, rooms = :rooms, 
+                  address = :address_id, price = :price, rooms = :rooms, 
                   description = :description, updated_at = NOW() 
                   WHERE id = :id";
 
@@ -67,7 +69,12 @@ class Ads
 
     public function getAd(int $id)
     {
-        return $this->pdo->query("SELECT * FROM ads WHERE id = {$id}")->fetch();
+        $query = "SELECT ads.*
+                  FROM ads
+                    JOIN images ON ads.id = images.ads_id
+                  WHERE ads.id = {$id}";
+
+        return $this->pdo->query($query)->fetch();
     }
 
     public function getAds(): false|array

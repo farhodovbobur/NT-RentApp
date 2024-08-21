@@ -42,3 +42,13 @@ function loadController(string $path, array|null $data = null): void
 
     require basePath('/controllers/' . $path);
 }
+
+
+function loadDashboard(string $path, array|null $data = null): void
+{
+
+    if (is_array($data)) {
+        extract($data);
+    }
+    require basePath('/public/dashboard/' . $path);
+}

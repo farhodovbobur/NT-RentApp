@@ -1,12 +1,44 @@
 <?php
 declare(strict_types=1);
 
-loadPartial('header.php');
-loadPartial('navbar.php');
+loadPartial('headerDash.php');
 ?>
 
-
 <div class="page-wrapper toggled">
+    <!-- sidebar-wrapper -->
+    <nav id="sidebar" class="sidebar-wrapper sidebar-dark">
+        <div class="sidebar-content">
+            <div class="sidebar-brand">
+                <a href="/"><img src="../assets/images/logo-light.png" alt=""></a>
+            </div>
+
+            <ul class="sidebar-menu border-t border-white/10" data-simplebar style="height: calc(100% - 70px);">
+                <li>
+                    <a href="index.html"><i class="mdi mdi-chart-bell-curve-cumulative me-2"></i>Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="explore-property.html"><i class="mdi mdi-home-city me-2"></i>Explore Properties</a>
+                </li>
+
+                <li>
+                    <a href="favorite-property.html"><i class="mdi mdi-home-heart me-2"></i>Favorite Properties</a>
+                </li>
+
+                <li>
+                    <a href="/ads/create"><i class="mdi mdi-home-plus me-2"></i>Add Properties</a>
+                </li>
+
+                <li>
+                    <a href="/logout"><i class="mdi mdi-logout me-2"></i>Logout</a>
+                </li>
+
+            </ul>
+            <!-- sidebar-menu  -->
+        </div>
+    </nav>
+    <!-- sidebar-wrapper  -->
+
     <!-- Start Page Content -->
     <main class="page-content bg-gray-50 dark:bg-slate-800">
         <!-- Top Header -->
@@ -43,7 +75,9 @@ loadPartial('navbar.php');
                     <!-- Country Dropdown -->
                     <li class="dropdown inline-block relative">
                         <button data-dropdown-toggle="dropdown" class="dropdown-toggle size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-md" type="button">
-                            <img src="assets/images/flags/usa.png" class="size-6 rounded-md" alt="">
+                            <i data-feather="language" class="size-4"></i>
+
+<!--                            <img src="assets/images/flags/usa.png" class="size-6 rounded-md" alt="">-->
                         </button>
                         <!-- Dropdown menu -->
                         <div class="dropdown-menu absolute end-0 m-0 mt-4 z-10 w-36 rounded-md overflow-hidden bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 hidden" onclick="event.stopPropagation();">
@@ -146,8 +180,8 @@ loadPartial('navbar.php');
 
                     <!-- User/Profile Dropdown -->
                     <li class="dropdown inline-block relative">
-                        <button data-dropdown-toggle="dropdown" class="dropdown-toggle items-center" type="button">
-                            <span class="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-md"><img src="assets/images/client/07.jpg" class="rounded-md" alt=""></span>
+                        <button data-dropdown-toggle="dropdown" class="dropdown-toggle size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-md" type="button">
+                            <i data-feather="user" class="size-4"></i>
                         </button>
                         <!-- Dropdown menu -->
                         <div class="dropdown-menu absolute end-0 m-0 mt-4 z-10 w-44 rounded-md overflow-hidden bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 hidden" onclick="event.stopPropagation();">
@@ -172,6 +206,7 @@ loadPartial('navbar.php');
                         </div>
                     </li><!--end dropdown-->
                     <!-- User/Profile Dropdown -->
+
                 </ul>
             </div>
         </div>
@@ -180,7 +215,6 @@ loadPartial('navbar.php');
         <div class="container-fluid relative px-3">
             <div class="layout-specing">
                 <!-- Start Content -->
-
 
                 <div class="container relative">
                     <div class="grid md:grid-cols-2 grid-cols-1 gap-6 mt-6">
@@ -196,53 +230,67 @@ loadPartial('navbar.php');
                         <div class="rounded-md shadow dark:shadow-gray-700 p-6 bg-white dark:bg-slate-900 h-fit">
                             <form id="ads-create" action="/ads/create" method="post" enctype="multipart/form-data">
                                 <div class="grid grid-cols-12 gap-5">
+
                                     <div class="col-span-12">
                                         <label for="title" class="font-medium">Sarlavha</label>
-                                        <input name="title" id="title" type="text" class="form-input mt-2" placeholder="Ads Title :">
-                                    </div>
-
-                                    <div class="md:col-span-4 col-span-12">
-                                        <label for="desc" class="font-medium">Ta'rif</label>
                                         <div class="form-icon relative mt-2">
                                             <i class="mdi mdi-arrow-expand-all absolute top-2 start-4 text-green-600"></i>
-                                            <textarea name="desc" id="desc" class="form-input ps-11" placeholder="E'lon bo'yicha ta'rif..."></textarea>
+                                            <input name="title" id="title" type="text" class="form-input ps-11" placeholder="Ads Title :" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-span-12">
+                                        <label for="address" class="font-medium">Manzil</label>
+                                        <div class="form-icon relative mt-2">
+                                            <i class="mdi mdi-arrow-expand-all absolute top-2 start-4 text-green-600"></i>
+                                            <input name="address" id="address" type="text" class="form-input ps-11" placeholder="Manzil:" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="md:col-span-5 col-span-1">
+                                        <label for="rooms" class="font-medium">Xonalar</label>
+                                        <div class="form-icon relative mt-2">
+                                            <i class="mdi mdi-arrow-expand-all absolute top-2 start-4 text-green-600"></i>
+                                            <input name="rooms" id="rooms" type="number" class="form-input ps-11" placeholder="Xonalar:" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="md:col-span-5 col-span-12">
+                                        <label for="square" class="font-medium">Maydon (m.kv)</label>
+                                        <div class="form-icon relative mt-2">
+                                            <i class="mdi mdi-arrow-expand-all absolute top-2 start-4 text-green-600"></i>
+                                            <input name="square" id="square" type="number" class="form-input ps-11" placeholder="Maydon:" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-span-12">
+                                        <label for="desc" class="font-medium">Ta'rif</label>
+                                        <div class="form-icon relative mt-2">
+                                            <i class="mdi mdi-text absolute top-2 start-4 text-green-600"></i>
+                                            <textarea name="desc" id="desc" class="form-input ps-11" placeholder="E'lon bo'yicha ta'rif..." required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-span-12">
+                                        <label for="price" class="font-medium">Narxi ($):</label>
+                                        <div class="form-icon relative mt-2">
+                                            <i class="mdi mdi-currency-usd absolute top-2 start-4 text-green-600"></i>
+                                            <input name="price" id="price" type="number" class="form-input ps-11" placeholder="Narxi:">
                                         </div>
                                     </div>
 
                                     <div class="md:col-span-4 col-span-12 hidden">
                                         <div class="form-icon relative mt-2">
-                                            <input name="user" value="5" type="number" class="form-input ps-11">
+                                            <input name="user" value="19" type="number" class="form-input ps-11">
                                         </div>
                                     </div>
+
                                     <div class="md:col-span-4 col-span-12 hidden">
                                         <div class="form-icon relative mt-2">
                                             <input name="status" value="1" type="number" class="form-input ps-11">
                                         </div>
                                     </div>
 
-                                    <div class="md:col-span-4 col-span-12 hidden">
-                                        <div class="form-icon relative mt-2">
-                                            <input name="branch" value="1" type="number" class="form-input ps-11">
-                                        </div>
-                                    </div>
-
-                                    <div class="md:col-span-4 col-span-12">
-                                        <label for="address" class="font-medium">Manzil</label>
-                                        <input name="address" id="address" type="text" class="form-input mt-2" placeholder="Manzil:">
-                                    </div>
-                                    <div class="col-span-12">
-                                        <label for="price" class="font-medium">Narxi:</label>
-                                        <div class="form-icon relative mt-2">
-                                            <i class="mdi mdi-currency-usd absolute top-2 start-4 text-green-600"></i>
-                                            <input name="price" id="price" type="number" class="form-input ps-11" placeholder="Narxi($) :">
-                                        </div>
-                                    </div>
-                                    <div class="col-span-12">
-                                        <label for="rooms" class="font-medium">Xonalar:</label>
-                                        <div class="form-icon relative mt-2">
-                                            <input name="rooms" id="rooms" type="number" class="form-input ps-11" placeholder="Xonalar :">
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <button type="submit" id="submit" name="send" class="btn bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white rounded-md mt-5">Add Property</button>
@@ -270,6 +318,7 @@ loadPartial('navbar.php');
 </div>
 <!-- page-wrapper -->
 
+
 <?php
-loadPartial('footer.php');
+loadPartial('footerDash.php');
 ?>

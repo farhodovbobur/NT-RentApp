@@ -1,6 +1,10 @@
 <?php
 loadPartial('header.php');
 loadPartial('navbar.php');
+
+/**
+ * @var $ad
+ */
 ?>
 
 <!-- Start -->
@@ -11,7 +15,7 @@ loadPartial('navbar.php');
                 <div class="grid grid-cols-1 relative">
                     <div class="tiny-one-item">
                         <div class="tiny-slide">
-                            <img src="../assets/images/property/single/1.jpg" class="rounded-md shadow dark:shadow-gray-700" alt="">
+                            <img src="<?=$ad->image?>" class="rounded-md shadow dark:shadow-gray-700" alt="">
                         </div>
 
                         <div class="tiny-slide">
