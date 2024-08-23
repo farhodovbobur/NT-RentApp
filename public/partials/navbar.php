@@ -24,12 +24,17 @@
 
         <!--Login button Start-->
         <ul class="buy-button list-none mb-0">
+            <?php if (isset($_SESSION['user'])): ?>
             <li class="inline mb-0">
-                <a href="/login" class="btn btn-icon bg-green-600 hover:bg-green-700 border-green-600 dark:border-green-600 text-white rounded-full"><i data-feather="user" class="size-4 stroke-[3]"></i></a>
+                <a href="/ads/create" class="btn btn-icon bg-green-600 hover:bg-green-700 border-green-600 dark:border-green-600 text-white rounded-full"><i data-feather="user" class="size-4 stroke-[3]"></i></a>
             </li>
+            <?php else: ?>
             <li class="sm:inline ps-1 mb-0 hidden">
-                <a href="/login" class="btn bg-green-600 hover:bg-green-700 border-green-600 dark:border-green-600 text-white rounded-full">Signup</a>
+                <a href="/login" class="btn bg-green-600 hover:bg-green-700 border-green-600 dark:border-green-600 text-white rounded-full">Login</a>
+            </li><li class="sm:inline ps-1 mb-0 hidden">
+                <a href="/register" class="btn bg-green-600 hover:bg-green-700 border-green-600 dark:border-green-600 text-white rounded-full">Register</a>
             </li>
+            <?php endif; ?>
         </ul>
         <!--Login button End-->
 

@@ -20,7 +20,7 @@ function basePath(string $path): string
     return __DIR__ . $path;
 }
 
-function loadView(string $path, array|null $data = null): void
+function loadView(string $path, array $data = []): void
 {
 
     if (is_array($data)) {

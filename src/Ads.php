@@ -71,7 +71,7 @@ class Ads
 
     public function getAd(int $id)
     {
-        $query = "SELECT ads.*
+        $query = "SELECT ads.*, image_name
                   FROM ads
                     JOIN images ON ads.id = images.ads_id
                   WHERE ads.id = {$id}";
@@ -79,7 +79,7 @@ class Ads
         return $this->pdo->query($query)->fetch();
     }
 
-    public function getAds(): false|array
+        public function getAds(): false|array
     {
         return $this->pdo->query("SELECT * FROM ads")->fetchAll();
     }

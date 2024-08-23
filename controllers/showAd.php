@@ -6,4 +6,5 @@ declare(strict_types=1);
 
 $ad = (new \App\Ads())->getAd($id);
 
+
 loadView('singleAd.php', ['ad' => $ad]);
