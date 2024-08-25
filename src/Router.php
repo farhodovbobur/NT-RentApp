@@ -40,8 +40,14 @@ class Router
         }
     }
 
-    public function errorResponse()
+    public static function errorResponse(int $code, $message = 'Error bad request'): void
     {
-
+        http_response_code($code);
+        if ($code == 404) {
+            loadView('404.php');
+        }
+//        echo json_encode(['ok' => false, 'code' => $code, 'message' => $message]);
+        exit();
     }
+
 }

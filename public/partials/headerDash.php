@@ -62,8 +62,8 @@
                     <div class="sidebar-submenu">
                         <ul>
                             <li><a href="/ads/create">Create Ad</a></li>
-                            <li><a href="/status/create">Create Status</a></li>
                             <li><a href="/branch/create">Create Branch</a></li>
+                            <li><a href="/status/create">Create Status</a></li>
                         </ul>
                     </div>
                 </li>
@@ -239,7 +239,7 @@
                                     <a href="lock-screen.html" class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i class="mdi mdi-lock-outline me-2"></i>Lockscreen</a>
                                 </li>
                                 <li>
-                                    <a href="login.html" class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i class="mdi mdi-logout me-2"></i>Logout</a>
+                                    <a href="/logout" class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i class="mdi mdi-logout me-2"></i>Logout</a>
                                 </li>
                             </ul>
                         </div>
