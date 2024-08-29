@@ -101,7 +101,7 @@ loadPartial('navbar.php');
             <div class="group rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
                 <a href="/ads/<?= $ad->id ?>">
                 <div class="relative">
-                    <img src="../assets/images/property/5.jpg" alt="">
+                    <img src="../assets/images/ads/<?=$ad->image_name ?>" alt="">
 
                     <div class="absolute top-4 end-4">
                         <a href="javascript:void(0)" class="btn btn-icon bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 rounded-full text-slate-100 dark:text-slate-700 focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 dark:hover:text-red-600"><i class="mdi mdi-heart text-[20px]"></i></a>

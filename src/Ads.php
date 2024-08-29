@@ -81,6 +81,21 @@ class Ads
 
         public function getAds(): false|array
     {
-        return $this->pdo->query("SELECT * FROM ads")->fetchAll();
+        $query = "SELECT ads.*, image_name 
+                    FROM ads
+                    JOIN images ON ads.id = images.ads_id";
+
+        return $this->pdo->query($query)->fetchAll();
+    }
+
+    public function getUsersAds(int $userId)
+    {
+        $query = "SELECT ads.*, image_name 
+                    FROM ads 
+                        JOIN branch ON branch.id = ads.branch_id
+                        LEFT JOIN images ON ads.id = images.ads_id
+                    WHERE user_id = $userId";
+
+        return $this->pdo->query($query)->fetchAll();
     }
 }

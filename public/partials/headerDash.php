@@ -68,6 +68,16 @@
                     </div>
                 </li>
 
+                <li class="sidebar-dropdown">
+                    <a href="javascript:void(0)"><i class="mdi mdi-account-edit me-2"></i>User Profile</a>
+                    <div class="sidebar-submenu">
+                        <ul>
+                            <li><a href="/profile">Profile</a></li>
+                            <li><a href="profile-setting.html">Profile Settings</a></li>
+                        </ul>
+                    </div>
+                </li>
+
                 <li>
                     <a href="/logout"><i class="mdi mdi-logout me-2"></i>Logout</a>
                 </li>
@@ -226,7 +236,7 @@
                         <div class="dropdown-menu absolute end-0 m-0 mt-4 z-10 w-44 rounded-md overflow-hidden bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 hidden" onclick="event.stopPropagation();">
                             <ul class="py-2 text-start">
                                 <li>
-                                    <a href="profile.html" class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i class="mdi mdi-account-outline me-2"></i>Profile</a>
+                                    <a href="/profile" class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i class="mdi mdi-account-outline me-2"></i>Profile</a>
                                 </li>
                                 <li>
                                     <a href="chat.html" class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i class="mdi mdi-chat-outline me-2"></i>Chat</a>

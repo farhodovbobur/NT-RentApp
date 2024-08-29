@@ -52,3 +52,9 @@ function loadDashboard(string $path, array|null $data = null): void
     }
     require basePath('/public/dashboard/' . $path);
 }
+
+function redirect(string $url): void
+{
+    header("Location: $url");
+    exit();
+}

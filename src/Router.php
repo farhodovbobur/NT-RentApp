@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\middlewares\Authentication;
+
 class Router
 {
     public function getResourceId(): false|int
@@ -13,16 +15,12 @@ class Router
         return is_numeric($resourceId) ? (int)$resourceId : false;
     }
 
-    public static function post($path, $callback): void
+    public static function get($path, $callback, string|null $middleware = null): void
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) === $path) {
-            $callback();
-            exit();
+        if ($path === parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) {
+            (new Authentication())->middleware($middleware);
         }
-    }
 
-    public static function get($path, $callback): void
-    {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $resourceId = (new self())->getResourceId();
             if ($resourceId) {
@@ -37,6 +35,14 @@ class Router
                 $callback();
                 exit();
             }
+        }
+    }
+
+    public static function post($path, $callback): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) === $path) {
+            $callback();
+            exit();
         }
     }
 

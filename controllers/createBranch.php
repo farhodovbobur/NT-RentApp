@@ -15,5 +15,5 @@ $branchName = $_POST['branch'];
 $branchAddress = $_POST['address'];
 
 if (isset($branchName) && isset($branchAddress)) {
-    dd($_POST);
+    (new \App\Branch())->insertBranch($branchName, $branchAddress);
 }

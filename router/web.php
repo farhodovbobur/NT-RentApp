@@ -8,22 +8,24 @@ Router::get('/', fn() => loadController('homeView.php'));
 Router::get('/ads/{id}', fn(int $id) => loadController('showAd.php', ['id' => $id]));
 
 
-Router::get('/login', fn() => (new \App\AuthController())->login());
-Router::get('/register', fn() => (new \App\AuthController())->register());
-Router::get('/logout', fn() => (new \App\AuthController())->logout());
+Router::get('/login', fn() => (new \Controller\AuthController())->login(), 'guest');
+Router::get('/register', fn() => (new \Controller\AuthController())->register(), 'guest');
+Router::get('/logout', fn() => (new \Controller\AuthController())->logout(), 'auth');
 
 
-Router::post('/login', fn() => (new \App\AuthController())->login());
-Router::post('/register', fn() => (new \App\AuthController())->register());
+Router::post('/login', fn() => (new \Controller\AuthController())->login());
+Router::post('/register', fn() => (new \Controller\AuthController())->register());
 
 
-Router::get('/ads/create', fn() => loadController('createAd.php'));
-Router::get('/status/create', fn() => loadController('createStatus.php'));
-Router::get('/branch/create', fn() => loadController('createBranch.php'));
+Router::get('/ads/create', fn() => loadController('createAd.php'), 'auth');
+Router::get('/status/create', fn() => loadController('createStatus.php'), 'auth');
+Router::get('/branch/create', fn() => loadController('createBranch.php'), 'auth');
 
 
 Router::post('/ads/create', fn() => loadController('createAd.php'));
 Router::post('/status/create', fn() => loadController('createStatus.php'));
 Router::post('/branch/create', fn() => loadController('createBranch.php'));
+
+Router::get('/profile', fn() => loadController('profileView.php'), 'auth');
 
 Router::errorResponse(404, 'Not Found');
