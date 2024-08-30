@@ -104,7 +104,7 @@ loadPartial('headerDash.php');
 
                                     <div class="md:col-span-4 col-span-12 hidden">
                                         <div class="form-icon relative mt-2">
-                                            <input name="user" value="<?=$_SESSION['user']['id'] ?>" type="number" class="form-input ps-11">
+                                            <input name="user" value="<?=(new \App\Session())->getId() ?>" type="number" class="form-input ps-11">
                                         </div>
                                     </div>
 

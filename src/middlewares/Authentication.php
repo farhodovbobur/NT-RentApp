@@ -2,6 +2,8 @@
 
 namespace App\middlewares;
 
+use App\Session;
+
 class Authentication
 {
     public function middleware(string|null $middleware = null): void
@@ -11,11 +13,11 @@ class Authentication
         }
 
         if ($middleware === 'guest') {
-            if (isset($_SESSION['user'])) {
+            if ((new Session())->getUser()) {
                 redirect('/');
             }
         } elseif ($middleware === 'auth') {
-            if (!isset($_SESSION['user'])) {
+            if (!(new Session())->getUser()) {
                 redirect('/login');
             }
         }

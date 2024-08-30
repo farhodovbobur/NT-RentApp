@@ -17,10 +17,6 @@ class Router
 
     public static function get($path, $callback, string|null $middleware = null): void
     {
-        if ($path === parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) {
-            (new Authentication())->middleware($middleware);
-        }
-
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $resourceId = (new self())->getResourceId();
             if ($resourceId) {
@@ -32,6 +28,7 @@ class Router
             }
 
             if ($path === parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) {
+                (new Authentication())->middleware($middleware);
                 $callback();
                 exit();
             }
@@ -44,6 +41,11 @@ class Router
             $callback();
             exit();
         }
+    }
+
+    public static function patch($path, $callback, string|null $middleware = null): void
+    {
+        
     }
 
     public static function errorResponse(int $code, $message = 'Error bad request'): void
