@@ -45,7 +45,24 @@ class Router
 
     public static function patch($path, $callback, string|null $middleware = null): void
     {
-        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $resourceId = (new self())->getResourceId();
+            if ($_POST['_method'] === 'patch') {
+                if ($resourceId) {
+                    $path = str_replace('{id}', (string)$resourceId, $path);
+                    if ($path === parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) {
+                        $callback($resourceId);
+                        exit();
+                    }
+                }
+
+                if ($path === parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) {
+                    (new Authentication())->middleware($middleware);
+                    $callback();
+                    exit();
+                }
+            }
+        }
     }
 
     public static function errorResponse(int $code, $message = 'Error bad request'): void

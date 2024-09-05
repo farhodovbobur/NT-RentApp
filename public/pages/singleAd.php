@@ -19,7 +19,6 @@ loadPartial('navbar.php');
                         <div class="tiny-slide">
                             <img src="../assets/images/ads/<?= $ad->image_name ?>" class="rounded-md shadow dark:shadow-gray-700" alt="">
                         </div>
-
                     </div>
                 </div>
 

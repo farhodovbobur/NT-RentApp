@@ -81,9 +81,10 @@ class Ads
 
         public function getAds(): false|array
     {
-        $query = "SELECT ads.*, image_name 
+        $query = "SELECT ads.*, image_name, status
                     FROM ads
-                    JOIN images ON ads.id = images.ads_id";
+                    JOIN images ON ads.id = images.ads_id
+                    LEFT JOIN status ON status.id = ads.status_id";
 
         return $this->pdo->query($query)->fetchAll();
     }

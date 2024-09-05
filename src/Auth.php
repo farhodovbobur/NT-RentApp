@@ -11,7 +11,7 @@ class Auth extends Users
         $_SESSION['error'] = null;
         if ($this->isUserExists()) {
             $_SESSION['error'] = "This User already exists";
-            header('location: /register');
+            redirect("/register");
 
         } else {
             $user = $this->create();
@@ -19,7 +19,7 @@ class Auth extends Users
                 'id' => $user->id,
                 'username' => $user->username,
             ];
-            header('location: /ads/create');
+            redirect('/profile-ads');
         }
         exit();
     }
@@ -38,10 +38,10 @@ class Auth extends Users
                 'username' => $user->username,
             ];
 
-            header('location: /ads/create');
+            redirect('/profile-ads');
         } else {
             $_SESSION['error'] = "Wrong phone number or password";
-            header('location: /login');
+            redirect('/login');
         }
         exit();
     }
@@ -49,7 +49,7 @@ class Auth extends Users
     #[NoReturn] public function logout(): void
     {
         session_destroy();
-        header('location: /');
+        redirect('/');
         exit();
     }
 
@@ -74,7 +74,7 @@ class Auth extends Users
             return $this->getUser($phone);
         }
         $_SESSION['error'] = "Wrong information entered";
-        header('location: /register');
+        redirect("/register");
         exit();
     }
 }

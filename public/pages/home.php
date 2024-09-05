@@ -110,18 +110,18 @@ loadPartial('navbar.php');
                 </a>
                 <div class="p-6">
                     <div class="pb-6">
-                        <a href="/ads/<?= $ad->id ?>" class="text-lg hover:text-green-600 font-medium ease-in-out duration-500">710 BOYD DR, Unit #1102, Baton Rouge, LA 70808, USA</a>
+                        <a href="/ads/<?= $ad->id ?>" class="text-lg hover:text-green-600 font-medium ease-in-out duration-500"><?= $ad->title ?></a>
                     </div>
 
                     <ul class="py-6 border-y border-slate-100 dark:border-gray-800 flex items-center list-none">
                         <li class="flex items-center me-4">
                             <i class="uil uil-compress-arrows text-2xl me-2 text-green-600"></i>
-                            <span>8000sqf</span>
+                            <span><?= $ad->square ?> m2</span>
                         </li>
 
                         <li class="flex items-center me-4">
-                            <i class="uil uil-bed-double text-2xl me-2 text-green-600"></i>
-                            <span>4 Beds</span>
+                            <i class="mdi mdi-door-open text-2xl me-2 text-green-600"></i>
+                            <span><?= $ad->rooms ?> rooms</span>
                         </li>
 
                         <li class="flex items-center">
@@ -133,7 +133,7 @@ loadPartial('navbar.php');
                     <ul class="pt-6 flex justify-between items-center list-none">
                         <li>
                             <span class="text-slate-400">Price</span>
-                            <p class="text-lg font-medium">$ <?=$ad->price ?></p>
+                            <p class="text-lg font-medium">$<?=$ad->price ?></p>
                         </li>
 
                         <li>

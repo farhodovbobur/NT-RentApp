@@ -50,7 +50,10 @@
                 </li>
 
                 <li>
-                    <a href="explore-property.html"><i class="mdi mdi-home-city me-2"></i>Explore Properties</a>
+                    <a href="/profile-ads"><i class="mdi mdi-home-city me-2"></i>Explore Properties</a>
+                </li>
+                <li>
+                    <a href="/branches"><i class="mdi mdi-home-group me-2"></i>Explore Branches</a>
                 </li>
 
                 <li>
