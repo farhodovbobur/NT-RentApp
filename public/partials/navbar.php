@@ -3,8 +3,8 @@
     <div class="container relative">
         <!-- Logo container-->
         <a class="logo" href="/">
-            <img src="../assets/images/logo-dark.png" class="inline-block dark:hidden" alt="">
             <img src="../assets/images/logo-light.png" class="hidden dark:inline-block" alt="">
+            <img src="../assets/images/logo-dark.png" class="inline-block dark:hidden" alt="">
         </a>
         <!-- End Logo container-->
 

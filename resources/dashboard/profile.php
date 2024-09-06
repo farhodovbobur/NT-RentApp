@@ -11,7 +11,7 @@ loadPartial('headerDash.php');
             <div class="profile-banner relative text-transparent rounded-md shadow dark:shadow-gray-700 overflow-hidden">
                 <input id="pro-banner" name="profile-banner" type="file" class="hidden" onchange="loadFile(event)">
                 <div class="relative shrink-0">
-                    <img src="../assets/images/bg.jpg" class="h-80 w-full object-cover" id="profile-banner" alt="">
+                    <img src="/assets/images/bg.jpg" class="h-80 w-full object-cover" id="profile-banner" alt="">
                     <div class="absolute inset-0 bg-black/70"></div>
                     <label class="absolute inset-0 cursor-pointer" for="pro-banner"></label>
                 </div>
@@ -25,7 +25,7 @@ loadPartial('headerDash.php');
                         <input id="pro-img" name="profile-image" type="file" class="hidden" onchange="loadFile(event)" />
                         <div>
                             <div class="relative size-24 mx-auto">
-                                <img src="../assets/images/client/07.jpg" class="rounded-full shadow dark:shadow-gray-700 ring-4 ring-slate-50 dark:ring-slate-800" id="profile-image" alt="">
+                                <img src="/assets/images/client/07.jpg" class="rounded-full shadow dark:shadow-gray-700 ring-4 ring-slate-50 dark:ring-slate-800" id="profile-image" alt="">
                                 <label class="absolute inset-0 cursor-pointer" for="pro-img"></label>
                             </div>
 

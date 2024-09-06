@@ -26,7 +26,7 @@ function loadView(string $path, array $data = []): void
     if (is_array($data)) {
         extract($data);
     }
-    require basePath('/public/pages/' . $path);
+    require basePath('/resources/views/pages/' . $path);
 }
 
 function loadPartial(string $path): void
@@ -50,7 +50,7 @@ function loadDashboard(string $path, array|null $data = null): void
     if (is_array($data)) {
         extract($data);
     }
-    require basePath('/public/dashboard/' . $path);
+    require basePath('/resources/dashboard/' . $path);
 }
 
 function redirect(string $url): void
