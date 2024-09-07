@@ -33,6 +33,8 @@
 <script src="../assets/libs/dash/libs/jsvectormap/maps/world.js"></script>
 <script src="../assets/js/dash/jsvectormap.init.js"></script>
 <script src="../assets/libs/dash/libs/apexcharts/apexcharts.min.js"></script>
+<script src="../assets/libs/shufflejs/shuffle.min.js"></script>
+
 <script src="../assets/libs/dash/libs/feather-icons/feather.min.js"></script>
 <script src="../assets/libs/dash/libs/simplebar/simplebar.min.js"></script>
 <script src="../assets/js/dash/plugins.init.js"></script>

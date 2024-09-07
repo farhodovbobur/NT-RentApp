@@ -36,6 +36,11 @@ class Users
         return $this->pdo->query("SELECT * FROM users WHERE phone = {$phone}")->fetch();
     }
 
+    public function getUsers(): false|array
+    {
+        return $this->pdo->query("SELECT * FROM users")->fetchAll();
+    }
+
     public function deleteUsers(int $id): bool
     {
         $query = "DELETE FROM users WHERE id = :id";

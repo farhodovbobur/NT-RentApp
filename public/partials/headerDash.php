@@ -57,6 +57,10 @@
                 </li>
 
                 <li>
+                    <a href="/profile-users"><i class="mdi mdi-account-group me-2"></i>Users</a>
+                </li>
+
+                <li>
                     <a href="favorite-property.html"><i class="mdi mdi-home-heart me-2"></i>Favorite Properties</a>
                 </li>
 
