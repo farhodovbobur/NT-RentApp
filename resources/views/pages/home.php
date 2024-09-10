@@ -67,7 +67,7 @@ loadPartial('navbar.php');
                                                 </select>
                                             </div>
                                         </div>
-                                        
+
 
                                         <div>
                                             <label for="buy-min-price" class="form-label font-medium text-slate-900 dark:text-white">Min Price :</label>
