@@ -42,32 +42,32 @@ loadPartial('headerDash.php');
                                     <div class="col-span-12">
                                         <label for="title" class="font-medium">Sarlavha</label>
                                         <div class="form-icon relative mt-2">
-                                            <i class="mdi mdi-arrow-expand-all absolute top-2 start-4 text-green-600"></i>
-                                            <input name="title" id="title" type="text" class="form-input ps-11" placeholder="Ads Title :" required>
+                                            <i class="mdi mdi-format-text absolute top-2 start-4 text-green-600"></i>
+                                            <input name="title" id="title" type="text" class="form-input ps-11" placeholder="Sarlovha :" required>
                                         </div>
                                     </div>
 
                                     <div class="col-span-12">
                                         <label for="address" class="font-medium">Manzil</label>
                                         <div class="form-icon relative mt-2">
-                                            <i class="mdi mdi-arrow-expand-all absolute top-2 start-4 text-green-600"></i>
-                                            <input name="address" id="address" type="text" class="form-input ps-11" placeholder="Manzil:" required>
+                                            <i class="mdi mdi-map-marker-radius absolute top-2 start-4 text-green-600"></i>
+                                            <input name="address" id="address" type="text" class="form-input ps-11" placeholder="Manzil :" required>
                                         </div>
                                     </div>
 
                                     <div class="md:col-span-4 col-span-1">
                                         <label for="rooms" class="font-medium">Xonalar</label>
                                         <div class="form-icon relative mt-2">
-                                            <i class="mdi mdi-arrow-expand-all absolute top-2 start-4 text-green-600"></i>
-                                            <input name="rooms" id="rooms" type="number" class="form-input ps-11" placeholder="Xonalar:" required>
+                                            <i class="mdi mdi-door-open absolute top-2 start-4 text-green-600"></i>
+                                            <input name="rooms" id="rooms" type="number" class="form-input ps-11" placeholder="Xonalar :" required>
                                         </div>
                                     </div>
 
                                     <div class="md:col-span-4 col-span-12">
                                         <label for="square" class="font-medium">Maydon (m.kv)</label>
                                         <div class="form-icon relative mt-2">
-                                            <i class="mdi mdi-arrow-expand-all absolute top-2 start-4 text-green-600"></i>
-                                            <input name="square" id="square" type="number" class="form-input ps-11" placeholder="Maydon:" required>
+                                            <i class="mdi mdi-ruler-square absolute top-2 start-4 text-green-600"></i>
+                                            <input name="square" id="square" type="number" class="form-input ps-11" placeholder="Maydon :" required>
                                         </div>
                                     </div>
 
@@ -98,7 +98,7 @@ loadPartial('headerDash.php');
                                         <label for="price" class="font-medium">Narxi ($):</label>
                                         <div class="form-icon relative mt-2">
                                             <i class="mdi mdi-currency-usd absolute top-2 start-4 text-green-600"></i>
-                                            <input name="price" id="price" type="number" class="form-input ps-11" placeholder="Narxi:">
+                                            <input name="price" id="price" type="number" class="form-input ps-11" placeholder="Narxi :">
                                         </div>
                                     </div>
 

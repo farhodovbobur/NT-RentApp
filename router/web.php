@@ -36,4 +36,6 @@ Router::get('/profile-ads/{id}', fn(int $id) => (new \Controller\ProfileControll
 
 Router::get('/profile-users', fn() => (new \Controller\UserController())->showUsers(), 'auth');
 
+Router::get('/search', fn() => (new \Controller\AdsController())->search());
+
 Router::errorResponse(404, 'Not Found');

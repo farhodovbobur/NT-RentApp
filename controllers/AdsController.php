@@ -75,4 +75,18 @@ class AdsController
 
         echo "Iltimos, barcha maydonlarni to'ldiring!";
     }
+
+    public function search(): void
+    {
+
+        $searchPhrase = $_REQUEST['search_phrase'];
+        $searchBranch = $_GET['search_branch'] ? (int) $_GET['search_branch'] : null;
+        $searchMinPrice = $_GET['choices-min-price'] ? (int) $_GET['choices-min-price'] : 0;
+        $searchMaxPrice = $_GET['choices-max-price'] ? (int) $_GET['choices-max-price'] : PHP_INT_MAX;
+
+
+        $ads = (new \App\Ads())->search($searchPhrase, $searchBranch, $searchMinPrice, $searchMaxPrice);
+        $branches = (new \App\Branch())->getBranches();
+        loadView('home.php', ['ads' => $ads, 'branches' => $branches]);
+    }
 }
