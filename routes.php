@@ -2,4 +2,4 @@
 
 declare(strict_types=1);
 
-require 'router/web.php';
+require 'routes/web.php';

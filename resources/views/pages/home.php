@@ -57,7 +57,7 @@ loadPartial('navbar.php');
                                             <label for="buy-properties" class="form-label font-medium text-slate-900 dark:text-white">Select Branches:</label>
                                             <div class="filter-search-form relative filter-border mt-2">
                                                 <i class="uil uil-estate icons"></i>
-                                                <select class="form-select z-2" data-trigger name="search_branch" id="choices-catagory-buy" aria-label="Default select example">
+                                                <select class="form-select z-2" data-trigger name="branch" id="choices-catagory-buy" aria-label="Default select example">
                                                     <option value="">Branch : </option>
 
                                                     <?php foreach ($branches as $branch): ?>
@@ -73,16 +73,7 @@ loadPartial('navbar.php');
                                             <label for="buy-min-price" class="form-label font-medium text-slate-900 dark:text-white">Min Price :</label>
                                             <div class="filter-search-form relative filter-border mt-2">
                                                 <i class="uil uil-usd-circle icons"></i>
-                                                <select class="form-select" data-trigger name="choices-min-price" id="choices-min-price-buy" aria-label="Default select example">
-                                                    <option value="">Min Price</option>
-                                                    <option>500</option>
-                                                    <option>1000</option>
-                                                    <option>2000</option>
-                                                    <option>3000</option>
-                                                    <option>4000</option>
-                                                    <option>5000</option>
-                                                    <option>6000</option>
-                                                </select>
+                                                <input name="min-price" type="number" id="choices-min-price-buy" class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" data-trigger aria-label="Default select example" placeholder="Min Price">
                                             </div>
                                         </div>
 
@@ -90,16 +81,7 @@ loadPartial('navbar.php');
                                             <label for="buy-max-price" class="form-label font-medium text-slate-900 dark:text-white">Max Price :</label>
                                             <div class="filter-search-form relative mt-2">
                                                 <i class="uil uil-usd-circle icons"></i>
-                                                <select class="form-select" data-trigger name="choices-max-price" id="choices-max-price-buy" aria-label="Default select example">
-                                                    <option value="">Max Price</option>
-                                                    <option>500</option>
-                                                    <option>1000</option>
-                                                    <option>2000</option>
-                                                    <option>3000</option>
-                                                    <option>4000</option>
-                                                    <option>5000</option>
-                                                    <option>6000</option>
-                                                </select>
+                                                <input name="max-price" type="number" id="choices-max-price-buy" class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" data-trigger aria-label="Default select example" placeholder="Min Price">
                                             </div>
                                         </div>
 
@@ -256,10 +238,7 @@ loadPartial('navbar.php');
 <section class="relative lg:py-1 py-10">
     <div class="container relative">
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[30px]">
-
-            <?php
-
-            foreach ($ads as $ad): ?>
+            <?php foreach ($ads as $ad): ?>
             <div class="group rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
                 <a href="/ads/<?= $ad->id ?>">
                 <div class="relative">
@@ -313,8 +292,16 @@ loadPartial('navbar.php');
                 </div>
             </div><!--end property content-->
             <?php endforeach; ?>
-
         </div><!--en grid-->
+
+
+        <?php if (empty($ads)) : ?>
+        <div class="container relative lg:mt-2 mt-16">
+            <div class="grid grid-cols-1 text-center">
+                <h3 class="mb-6 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">No resources!</h3>
+            </div><!--end grid-->
+        </div><!--end container-->
+        <?php endif; ?>
 
         <div class="grid md:grid-cols-12 grid-cols-1 mt-8">
             <div class="md:col-span-12 text-center">
@@ -347,6 +334,7 @@ loadPartial('navbar.php');
             </div>
         </div><!--end grid-->
     </div><!--end container-->
+
 </section><!--end section-->
 <!-- End -->
 

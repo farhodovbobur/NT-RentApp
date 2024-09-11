@@ -78,11 +78,10 @@ class AdsController
 
     public function search(): void
     {
-
         $searchPhrase = $_REQUEST['search_phrase'];
-        $searchBranch = $_GET['search_branch'] ? (int) $_GET['search_branch'] : null;
-        $searchMinPrice = $_GET['choices-min-price'] ? (int) $_GET['choices-min-price'] : 0;
-        $searchMaxPrice = $_GET['choices-max-price'] ? (int) $_GET['choices-max-price'] : PHP_INT_MAX;
+        $searchBranch = $_GET['branch'] ? (int) $_GET['search_branch'] : null;
+        $searchMinPrice = $_GET['min-price'] ? (int) $_GET['min-price'] : 0;
+        $searchMaxPrice = $_GET['max-price'] ? (int) $_GET['max-price'] : PHP_INT_MAX;
 
 
         $ads = (new \App\Ads())->search($searchPhrase, $searchBranch, $searchMinPrice, $searchMaxPrice);
